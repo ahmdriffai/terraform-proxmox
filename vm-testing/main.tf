@@ -39,6 +39,7 @@ resource "proxmox_vm_qemu" "vm" {
 
   ciuser = var.ci_user
   cipassword = var.ci_password
+  sshkeys = file(var.ci_ssh_public_key)
 
   disks {
     scsi {
